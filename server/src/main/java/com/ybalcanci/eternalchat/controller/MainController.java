@@ -3,6 +3,7 @@ package com.ybalcanci.eternalchat.controller;
 import com.ybalcanci.eternalchat.model.Message;
 import com.ybalcanci.eternalchat.repository.MessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,6 +21,7 @@ public class MainController {
 	}
 
 	@GetMapping("/messages")
+	@CrossOrigin(origins = {"http://localhost:3000", "http://localhost:5000"})
 	public List<Message> messages(){
 		return messageRepository.findAll();
 	}

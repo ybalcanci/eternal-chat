@@ -28,7 +28,6 @@ public class EternalChatCommandLineRunner implements CommandLineRunner {
 			message.setSender(user);
 			user.getMessages().add(message);
 			userRepository.save(user);
-			messageRepository.save(message);
 		});
 		messageRepository.findAll().forEach(System.out::println);
 	}

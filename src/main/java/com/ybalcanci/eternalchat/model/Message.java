@@ -52,4 +52,14 @@ public class Message {
 	public void setSender(User sender) {
 		this.sender = sender;
 	}
+
+	@Override
+	public String toString() {
+		return "Message{" +
+				"id=" + id +
+				", text='" + text + '\'' +
+				", sentDate=" + sentDate +
+				", sender=" + sender +
+				'}';
+	}
 }

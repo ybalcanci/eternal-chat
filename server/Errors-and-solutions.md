@@ -1,6 +1,7 @@
 ### 1)
 JSON data is written in page so many times despite I had only 2 objects.
 I added @JsonIgnore annotation to the head of @ManyToOne relation in my model class to resolve this.
+##### Caused problem 5
 
 ### 2)
 I was using @Controller for my controller class but when I wanted to send JSON data as response, 
@@ -36,3 +37,15 @@ The problem was resolved when I added
 @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:5000"})
 ```
 to the head of related mapping method.
+
+### 5)
+I wanted to send user data regarding messages but I could not because of @JsonIgnore annotation.
+This problem was resolved when I added 
+```
+@JsonBackReference
+```
+prior to "messages" reference in User class and
+```
+@JsonManagedReference
+```
+prior to "sender" reference in Message class after removing @JsonIgnore.

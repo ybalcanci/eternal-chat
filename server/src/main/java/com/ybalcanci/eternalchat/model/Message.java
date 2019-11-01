@@ -1,6 +1,7 @@
 package com.ybalcanci.eternalchat.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
@@ -21,7 +22,8 @@ public class Message {
 	@CreationTimestamp
 	private Timestamp sentDate;
 
-	@JsonIgnore // don't know what this does
+	//@JsonIgnore // don't know what this does
+	@JsonManagedReference
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User sender;

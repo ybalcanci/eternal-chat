@@ -1,5 +1,7 @@
 package com.ybalcanci.eternalchat.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -15,6 +17,7 @@ public class User {
 	@Column(unique = true, nullable = false)
 	private String username;
 
+	@JsonBackReference
 	@OneToMany(mappedBy = "sender", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private Set<Message> messages = new HashSet<>();
 
@@ -36,5 +39,13 @@ public class User {
 
 	public Set<Message> getMessages() {
 		return messages;
+	}
+
+	@Override
+	public String toString() {
+		return "User{" +
+				"id=" + id +
+				", username='" + username + '\'' +
+				'}';
 	}
 }

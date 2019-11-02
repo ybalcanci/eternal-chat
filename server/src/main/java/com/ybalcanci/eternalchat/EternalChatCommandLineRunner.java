@@ -22,8 +22,8 @@ public class EternalChatCommandLineRunner implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		User user = new User("ybal");
-		Stream.of("sa napyon", "as iyi sen").forEach(text ->{
+		User user = new User("user1");
+		Stream.of("message 1", "message 2").forEach(text ->{
 			Message message = new Message(text);
 			message.setSender(user);
 			user.getMessages().add(message);

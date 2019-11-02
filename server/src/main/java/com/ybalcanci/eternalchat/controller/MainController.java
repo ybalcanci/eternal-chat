@@ -16,9 +16,9 @@ public class MainController {
 	private MessageRepository messageRepository;
 
 	@PostMapping
-	public Message newMessage(@RequestBody Message newEmployee) {
-		System.out.println("New Post Request: " + newEmployee);
-		return messageRepository.save(newEmployee);
+	public Message newMessage(@RequestBody Message message) {
+		System.out.println("New Post Request: " + message);
+		return messageRepository.save(message);
 	}
 
 	@GetMapping

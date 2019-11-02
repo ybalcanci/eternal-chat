@@ -22,8 +22,6 @@ public class Message {
 	@CreationTimestamp
 	private Timestamp sentDate;
 
-	//@JsonIgnore // don't know what this does
-	@JsonManagedReference
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User sender;

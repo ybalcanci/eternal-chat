@@ -49,3 +49,20 @@ prior to "messages" reference in User class and
 @JsonManagedReference
 ```
 prior to "sender" reference in Message class after removing @JsonIgnore.
+
+##### Caused problem 6
+### 6)
+When I wanted to send data to server via POST request, I got the error
+```
+.c.j.MappingJackson2HttpMessageConverter : Failed to evaluate Jackson deserialization for type [[simple type, class 
+com.ybalcanci.eternalchat.model.Message]]: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot handle managed/back reference 'defaultReference': back 
+reference type (java.util.Set) not compatible with managed type (com.ybalcanci.eternalchat.model.Message)
+```
+which was fixed when I removed
+```
+@JsonManagedReference
+```
+from Messages class.
+https://stackoverflow.com/questions/28179369/spring-rest-json-can-not-handle-managed-back-reference-defaultreference-415/28210464
+
+### 7)

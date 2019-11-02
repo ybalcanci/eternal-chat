@@ -1,4 +1,4 @@
-Spring Boot application for only one chat.
+Web application for only one chat.
 ## To run the server
 ```
 cd server
@@ -16,3 +16,10 @@ npm start
 npm version 6.4.1 is used.
 
 You can access the page from http://localhost:3000/
+
+## Technologies used
+#### Server
+* Spring Boot
+* JPA
+#### Client
+* React
